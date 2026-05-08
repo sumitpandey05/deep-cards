@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import LandingView from "./components/LandingView";
 import SetupView from "./components/SetupView";
 
 type AppView = "landing" | "setup";
 
-export default function Home(): React.JSX.Element {
+export default function Home() {
   const [currentView, setCurrentView] = useState<AppView>("landing");
 
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface SetupViewProps {
@@ -34,7 +34,7 @@ const itemVariants = {
 export default function SetupView({
   onBack,
   onContinue,
-}: SetupViewProps): React.JSX.Element {
+}: SetupViewProps) {
   const [selectedAge, setSelectedAge] = useState<string | null>(null);
 
   return (

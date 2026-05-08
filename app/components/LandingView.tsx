@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 
 interface LandingViewProps {
   onStart: () => void;
 }
 
-export default function LandingView({ onStart }: LandingViewProps): React.JSX.Element {
+export default function LandingView({ onStart }: LandingViewProps) {
   return (
     <motion.section
       key="landing"
