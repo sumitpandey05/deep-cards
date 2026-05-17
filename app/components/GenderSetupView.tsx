@@ -141,8 +141,8 @@ function PlayerCard({
   label: string;
   icon: string;
   color: "primary" | "tertiary";
-  selected: string | null;
-  onSelect: (g: string) => void;
+  selected: Gender | null;
+  onSelect: (gender: Gender) => void;
 }) {
   const accentText = color === "primary" ? "text-primary" : "text-tertiary";
   const accentBg =
