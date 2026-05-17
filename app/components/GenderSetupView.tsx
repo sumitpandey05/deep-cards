@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { GENDERS, type Gender } from "@/lib/questions";
 
 interface GenderSetupViewProps {
   onBack: () => void;
-  onContinue: (p1Gender: string, p2Gender: string) => void;
+  onContinue: (p1Gender: Gender, p2Gender: Gender) => void | Promise<void>;
+  isLoading?: boolean;
+  errorMessage?: string | null;
 }
-
-const GENDERS = ["Man", "Woman", "Non-binary", "Prefer not to say"] as const;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -30,11 +31,13 @@ const itemVariants = {
 export default function GenderSetupView({
   onBack,
   onContinue,
+  isLoading = false,
+  errorMessage = null,
 }: GenderSetupViewProps) {
-  const [p1Gender, setP1Gender] = useState<string | null>(null);
-  const [p2Gender, setP2Gender] = useState<string | null>(null);
+  const [p1Gender, setP1Gender] = useState<Gender | null>(null);
+  const [p2Gender, setP2Gender] = useState<Gender | null>(null);
 
-  const canContinue = p1Gender !== null && p2Gender !== null;
+  const canContinue = p1Gender !== null && p2Gender !== null && !isLoading;
 
   return (
     <motion.section
@@ -93,17 +96,29 @@ export default function GenderSetupView({
           onClick={() => canContinue && onContinue(p1Gender!, p2Gender!)}
           className="bg-primary text-on-primary font-body text-lg leading-7 py-4 px-12 rounded-full hover:opacity-90 transition-all duration-300 shadow-md flex items-center gap-2 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-95"
         >
-          Continue
+          {isLoading ? "Preparing Deck..." : "Continue"}
           <span className="material-symbols-outlined text-sm">
             arrow_forward
           </span>
         </button>
       </motion.div>
 
+      {errorMessage && (
+        <motion.p
+          className="mt-4 text-sm text-error text-center max-w-md"
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          {errorMessage}
+        </motion.p>
+      )}
+
       {/* Back link */}
       <motion.button
         type="button"
         onClick={onBack}
+        disabled={isLoading}
         className="mt-6 text-on-surface-variant text-sm hover:text-primary transition-colors cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

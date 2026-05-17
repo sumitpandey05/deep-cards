@@ -7,15 +7,77 @@ import SetupView from "./components/SetupView";
 import GenderSetupView from "./components/GenderSetupView";
 import GameView from "./components/GameView";
 import ClosingView from "./components/ClosingView";
+import type { AgeGroup, Gender, QuestionDeck } from "@/lib/questions";
 
 type AppView = "landing" | "setup-age" | "setup-gender" | "game" | "closing";
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<AppView>("landing");
+  const [selectedAgeGroup, setSelectedAgeGroup] = useState<AgeGroup | null>(null);
+  const [deck, setDeck] = useState<QuestionDeck | null>(null);
+  const [isLoadingDeck, setIsLoadingDeck] = useState(false);
+  const [deckError, setDeckError] = useState<string | null>(null);
 
   const resetToLanding = useCallback(() => {
+    setSelectedAgeGroup(null);
+    setDeck(null);
+    setDeckError(null);
+    setIsLoadingDeck(false);
     setCurrentView("landing");
   }, []);
+
+  const handleAgeContinue = useCallback((ageGroup: AgeGroup) => {
+    setSelectedAgeGroup(ageGroup);
+    setDeckError(null);
+    setCurrentView("setup-gender");
+  }, []);
+
+  const handleGenderContinue = useCallback(
+    async (playerOneGender: Gender, playerTwoGender: Gender) => {
+      if (!selectedAgeGroup) {
+        setDeckError("Choose an age group before selecting player identities.");
+        setCurrentView("setup-age");
+        return;
+      }
+
+      setIsLoadingDeck(true);
+      setDeckError(null);
+
+      const params = new URLSearchParams({
+        ageGroup: selectedAgeGroup,
+        playerOneGender,
+        playerTwoGender,
+      });
+
+      try {
+        const response = await fetch(`/api/questions?${params.toString()}`, {
+          cache: "no-store",
+        });
+        const payload = (await response.json()) as QuestionDeck | { error?: string };
+
+        if (!response.ok || !("questions" in payload)) {
+          throw new Error(
+            "error" in payload && payload.error
+              ? payload.error
+              : "Unable to prepare the question deck.",
+          );
+        }
+
+        setDeck(payload);
+        setCurrentView("game");
+      } catch (error) {
+        setDeck(null);
+        setDeckError(
+          error instanceof Error
+            ? error.message
+            : "Unable to prepare the question deck.",
+        );
+      } finally {
+        setIsLoadingDeck(false);
+      }
+    },
+    [selectedAgeGroup],
+  );
 
   // Game view needs full-screen layout, others are centered
   const isGameView = currentView === "game";
@@ -68,7 +130,7 @@ export default function Home() {
           <SetupView
             key="setup-age"
             onBack={() => setCurrentView("landing")}
-            onContinue={(_ageGroup) => setCurrentView("setup-gender")}
+            onContinue={handleAgeContinue}
           />
         )}
 
@@ -76,15 +138,18 @@ export default function Home() {
           <GenderSetupView
             key="setup-gender"
             onBack={() => setCurrentView("setup-age")}
-            onContinue={(_p1, _p2) => setCurrentView("game")}
+            onContinue={handleGenderContinue}
+            isLoading={isLoadingDeck}
+            errorMessage={deckError}
           />
         )}
 
-        {currentView === "game" && (
+        {currentView === "game" && deck && (
           <GameView
             key="game"
             onEnd={resetToLanding}
             onComplete={() => setCurrentView("closing")}
+            questions={deck.questions}
           />
         )}
 

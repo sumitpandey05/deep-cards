@@ -2,20 +2,29 @@
 
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { questions, LEVEL_NAMES, LEVEL_ICONS, getQuestionsByLevel } from "@/lib/questions";
-import type { Question } from "@/lib/questions";
+import {
+  LEVEL_NAMES,
+  LEVEL_ICONS,
+  getQuestionsByLevel,
+  type Question,
+} from "@/lib/questions";
 
 interface GameViewProps {
   onEnd: () => void;
   onComplete: () => void;
+  questions: Question[];
 }
 
-export default function GameView({ onEnd, onComplete }: GameViewProps) {
+export default function GameView({
+  onEnd,
+  onComplete,
+  questions,
+}: GameViewProps) {
   const [currentLevel, setCurrentLevel] = useState<1 | 2 | 3>(1);
   const [cardIndex, setCardIndex] = useState(0);
   const [direction, setDirection] = useState(1); // 1 = forward
 
-  const levelQuestions = getQuestionsByLevel(currentLevel);
+  const levelQuestions = getQuestionsByLevel(questions, currentLevel);
   const currentQuestion = levelQuestions[cardIndex];
   const totalCards = levelQuestions.length;
 

@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { AGE_GROUPS, type AgeGroup } from "@/lib/questions";
 
 interface SetupViewProps {
   onBack: () => void;
-  onContinue: (ageGroup: string) => void;
+  onContinue: (ageGroup: AgeGroup) => void;
 }
-
-const AGE_GROUPS = ["Under 18", "18–24", "25–34", "35+"] as const;
 
 // Stagger children animation
 const containerVariants = {
@@ -35,7 +34,7 @@ export default function SetupView({
   onBack,
   onContinue,
 }: SetupViewProps) {
-  const [selectedAge, setSelectedAge] = useState<string | null>(null);
+  const [selectedAge, setSelectedAge] = useState<AgeGroup | null>(null);
 
   return (
     <motion.section
