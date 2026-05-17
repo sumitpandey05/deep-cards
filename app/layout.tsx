@@ -15,9 +15,9 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Deep Cards - A Ritual for Connection",
+  title: "Unsaid Things - A Ritual for Connection",
   description:
-    "A quiet space for meaningful connection. Take a breath, deal a card, and listen.",
+    "A quiet space for meaningful connection. Take a breath, deal a card, speak and listen.",
   icons: { icon: "/favicon.ico" },
 };
 
