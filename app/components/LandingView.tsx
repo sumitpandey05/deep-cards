@@ -23,7 +23,7 @@ export default function LandingView({ onStart }: LandingViewProps) {
 
         {/* Title */}
         <h1 className="font-display text-[40px] leading-[48px] tracking-[-0.02em] text-primary mb-6">
-          Deep Cards
+          Unsaid
         </h1>
 
         {/* Poetic Subtitle */}
