@@ -1,0 +1,22 @@
+{
+  "name": "Unsaid Things",
+  "short_name": "Unsaid Things",
+  "description": "A quiet space for meaningful connection. Take a breath, deal a card, speak and listen.",
+  "icons": [
+    {
+      "src": "/icon1.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#0f0f0f",
+  "background_color": "#0f0f0f",
+  "display": "standalone"
+}
