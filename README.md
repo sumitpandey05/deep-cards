@@ -2,7 +2,7 @@
 
 > A co-located, single-device web app designed to facilitate meaningful, progressively deeper conversations between two people.
 
-**Live:** [unsaidthings.vercel.app](https://unsaid-things.vercel.app/) 
+**Live:** [unsaid-things.vercel.app](https://unsaid-things.vercel.app/) 
 
 ---
 
