@@ -21,6 +21,24 @@
 - What's something you believed confidently at a younger age that you now think was completely wrong?
 - What's a small thing that makes you irrationally happy — and does it embarrass you a little?
 - What's a quality in other people you're drawn to — that you wish you had more of yourself?
+- What belief or dream has shaped the way you live your life the most?
+- What is one idea you once believed strongly but later changed your mind about?
+- If your thoughts could physically shape reality, what would your world look like
+- Would you rather know an uncomfortable truth or stay comfortably unaware?
+- What life lesson did reality teach you the hard way?
+- Do you usually make decisions with logic or emotion?
+- If emotions disappeared for one day, how different would your life be?
+- What is one opinion you hold because it logically makes sense, even if people dislike it?
+- What place has changed the way you see the world?
+- What experience would you recommend everyone have at least once?
+- If you could relive one year of your life, which would it be?
+- What would you do if nobody judged you?
+- What quality do you admire most in people?
+- What small act of kindness has stayed with you for years?
+- What makes someone truly “good” in your eyes?
+- Who has had the biggest positive impact on your life?
+- Would you rather make one person extremely happy or many people slightly happy?
+- What difficult decision have you made because it benefited others?
 
 **Level 2 (Personal)**
 - What's the most important relationship in your life right now — and what does it actually cost you?
@@ -28,6 +46,21 @@
 - What do the people who love you most misunderstand about what you need from them?
 - What's a chapter of your life you don't talk about much — not because it's painful, but because you're not sure anyone would get it?
 - What's something you've quietly changed about yourself in the last year — and do you like the new version?
+- What personal value do you refuse to compromise on, even when it makes life harder?
+- Have your expectations about life made you happier or more disappointed?
+- Have you ever fallen in love with the idea of someone more than who they really were?
+- When did you first realize adulthood was very different from what you imagined?
+- What reality about yourself have you struggled to accept?
+- What moment completely changed your understanding of another person?
+- What experience made you stronger than you expected?
+- What freedom in life feels both exciting and terrifying to you?
+- What kind of legacy do you want to leave behind?
+- When did practicality force you to give up something you loved?
+- What part of your personality do you value the most?
+- When did you feel most understood by another person?
+- What kind of emotional support means the most to you?
+- How do you usually show love or care for people?
+- What responsibility in your life feels the heaviest?
 
 **Level 3 (Vulnerable)**
 - What's the biggest lie you tell yourself — the one you've almost convinced yourself is true?
@@ -35,6 +68,20 @@
 - What has fear quietly cost you that you're only now starting to add up?
 - What do you want so badly that you're embarrassed to admit it, even to yourself?
 - What's a belief about yourself that someone else planted — and you're not sure it was ever really yours?
+- Have you ever felt disconnected from reality because of your own expectations?
+- Is there a dream you still hold onto even though the world keeps telling you to let it go?
+- What part of yourself exists more in your imagination than in your real life?
+- What painful truth are you currently avoiding?
+- What part of your life feels farthest from what you hoped it would be?
+- Has overthinking ever ruined a moment you deeply cared about?
+- Have you ever realized you were emotionally exhausted while pretending to be rational?
+- What is something you wish you never had to experience?
+- Have you ever felt completely alone even around other people?
+- What thought about life scares you the most at night?
+- What sacrifice have you made that nobody really notices?
+- When was the last time you genuinely needed someone?
+- Have you ever felt unseen by the people closest to you?
+- Do you ever feel guilty for wanting more for yourself?
 
 ---
 
@@ -192,7 +239,7 @@
 **Level 1 (Icebreaking)**
 - What's something about yourself that feels most genuinely yours?
 - What's something you appreciate about people who don't make assumptions about you?
--What's a part of your identity that's felt more solid recently?
+- What's a part of your identity that's felt more solid recently?
 
 **Level 2 (Personal)**
 - When do you feel most misread by the people around you?
